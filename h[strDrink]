@@ -1,0 +1,26 @@
+
+[1mFrom:[0m /mnt/c/Users/betty/margarita_ville/lib/api.rb:18 API.fetch_drinks:
+
+     [1;34m4[0m:   [32mdef[0m [1;36mself[0m.[1;34mfetch_drinks[0m
+     [1;34m5[0m:     url = [31m[1;31m"[0m[31mhttps://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita[1;31m"[0m[31m[0m
+     [1;34m6[0m:    
+     [1;34m7[0m:    uri = URI(url)
+     [1;34m8[0m:    response = [1;34;4mNet[0m::[1;34;4mHTTP[0m.get(uri)
+     [1;34m9[0m:    hash = [1;34;4mJSON[0m.parse(response)
+    [1;34m10[0m: 
+    [1;34m11[0m:    array_of_drinks = hash[[31m[1;31m"[0m[31mdrinks[1;31m"[0m[31m[0m]
+    [1;34m12[0m:    [1;34m# strDrink = name[0m
+    [1;34m13[0m:    [1;34m# strInstructions[0m
+    [1;34m14[0m:    [1;34m# strGlass[0m
+    [1;34m15[0m:    [1;34m# strInstructionsDE[0m
+    [1;34m16[0m:    [1;34m# :name, :instructions, :glass, :german_instructions[0m
+    [1;34m17[0m:    array_of_drinks.each [32mdo[0m |drink_hash|
+ => [1;34m18[0m:     binding.pry
+    [1;34m19[0m:     drink = [1;34;4mDrink[0m.new
+    [1;34m20[0m:     drink.name = drink_hash[[31m[1;31m"[0m[31mstrDrink[1;31m"[0m[31m[0m]
+    [1;34m21[0m:     drink.instructions = drink_hash[[31m[1;31m"[0m[31mstrInstructions[1;31m"[0m[31m[0m]
+    [1;34m22[0m:     drink.glass = drink_hash[[31m[1;31m"[0m[31mstrGlass[1;31m"[0m[31m[0m]
+    [1;34m23[0m:     drink.german_instructions = drink_hash[[31m[1;31m"[0m[31mstrInstructionsDE[1;31m"[0m[31m[0m] 
+    [1;34m24[0m:    [32mend[0m 
+    [1;34m25[0m: [32mend[0m 
+
