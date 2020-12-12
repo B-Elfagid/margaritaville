@@ -20,6 +20,7 @@ class CLI
      puts "Good Choice!"
      #display the list
      display_list_of_drinks
+     ask_user_for_drink_choice
     end 
 
 
@@ -31,9 +32,31 @@ class CLI
         Drink.all.each.with_index(1) do |drink, index|
         puts "#{index}. #{drink.name}"
         end    
-    
+    end   
+
+     def ask_user_for_drink_choice
+        #ask user for choice
+        puts "Enter the number of the drink you'd like to know more about"
+        index = gets.strip.to_i-1
+
+        # index valid? number between 0 to 6 
+        until index.between?(0, Drink.all.length - 1)
+            # keep asking for user input
+            puts "Sorry invalid. Choose a valid number"
+            index = gets.strip.to_i-1
+
+    end
+        drink_instance = Drink.all[index]
         
+        display_drink_details(drink_instance)  
+    end  
 
-  end   
-
+    def  display_drink_details(drink) 
+     sleep(1)
+     puts "\n"
+     puts drink.name
+     puts "Glass: " + drink.glass
+     puts "Instructions: " + drink.instructions
+     puts "German Instructions: " + drink.german_instructions
+    end 
 end 
